@@ -38,7 +38,7 @@ namespace Raminagrobis.API.Controllers
             return new Paniers_DTO()
             {
                 ID = item.ID,
-                Libelle = item.Libelle,
+                //Libelle = item.Libelle,
             };
         }
         #endregion
