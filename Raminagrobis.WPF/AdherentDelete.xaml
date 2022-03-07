@@ -13,22 +13,23 @@
             <RowDefinition Height="225"/>
             <RowDefinition Height="225"/>
         </Grid.RowDefinitions>
-        <ListView Name="lvAdherents" Margin="0,35,0,100" Grid.RowSpan="2">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Societe" Width="100" DisplayMemberBinding="{Binding Societe}" />
-                    <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding Nom}" />
-                    <GridViewColumn Header="Prenom" Width="100" DisplayMemberBinding="{Binding Prenom}" />
-                    <GridViewColumn Header="Email" Width="100" DisplayMemberBinding="{Binding Email}" />
-                    <GridViewColumn Header="Civilite" Width="100" DisplayMemberBinding="{Binding Civilite}" />
-                    <GridViewColumn Header="Date Adhesion" Width="100" DisplayMemberBinding="{Binding Date_adhesion}" />
-                    <GridViewColumn Header="Actif" Width="100" DisplayMemberBinding="{Binding Actif}" />
-                    <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding ID}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <TextBlock x:Name="TextView" Text="Saisir l'ID à supprimer :" FontSize="16px" Margin="144,144,486,51" Grid.Row="1"/>
-        <TextBox Name="DeleteID" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="FR" Margin="324,139,336,46" Grid.Row="1" />
-        <Button Content="Supprimer" Margin="554,139,136,46" Click="BtnAdherentDelete" Grid.Row="1"/>
+        <TextBlock x:Name="Societe" Text="Societe" FontSize="16px" Margin="291,108,424,87"/>
+        <TextBlock Text="Civilite" FontSize="16px" Margin="291,148,424,47"/>
+        <TextBlock Text="Nom" FontSize="16px" Margin="291,188,424,7"/>
+        <TextBlock Text="Prenom" FontSize="16px" Margin="291,3,424,192" Grid.Row="1"/>
+        <TextBlock Text="Email" FontSize="16px" Margin="291,43,424,152" Grid.Row="1"/>
+        <TextBlock Text="Actif" FontSize="16px" Margin="291,83,424,112" Grid.Row="1"/>
+        <TextBox x:Name="UpdateSociete" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="FR" Margin="361,108,309,87" />
+        <TextBox x:Name="UpdateCivilite" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="FR" Margin="361,148,309,47" />
+        <TextBox x:Name="UpdateNom" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="FR" Margin="361,188,309,7" />
+        <TextBox x:Name="UpdatePrenom" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="FR" Margin="361,3,309,192" Grid.Row="1" />
+        <TextBox x:Name="UpdateEmail" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="FR" Margin="361,43,309,152" Grid.Row="1" />
+        <TextBox x:Name="UpdateActif" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="FR" Margin="361,83,309,112" Grid.Row="1" />
+        <Button Content="Supprimer" Margin="371,175,319,10" Click="BtnSupprimer" Grid.Row="1"/>
+        <TextBlock Text="Date" FontSize="16px" Margin="291,126,439,69" Grid.Row="1"/>
+        <DatePicker x:Name="UpdateDate" Margin="361,128,230,69" Grid.Row="1"/>
+
+        <TextBlock Text="ID" FontSize="16px" Margin="521,83,194,112" Grid.Row="1"/>
+        <TextBox x:Name="ID" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="FR" Margin="591,83,79,112" Grid.Row="1" />
     </Grid>
 </Page>

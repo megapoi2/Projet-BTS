@@ -24,28 +24,29 @@ namespace Raminagrobis.WPF
     public partial class AdherentDelete : Page
     {
         #region InitializeComponent
-        public AdherentDelete()
+        public AdherentDelete(Raminagrobis.API.Client.Adherent_DTO adherent)
         {
             InitializeComponent();
+            this.UpdateSociete.Text = adherent.Societe;
+            this.UpdateCivilite.Text = adherent.Civilite.ToString();
+            this.UpdateNom.Text = adherent.Nom;
+            this.UpdatePrenom.Text = adherent.Prenom;
+            this.UpdateEmail.Text = adherent.Email;
+            this.UpdateActif.Text = adherent.Actif.ToString();
+            this.ID.Text = adherent.ID.ToString();
+            this.UpdateDate.Text = adherent.Date_adhesion.ToString();
         }
         #endregion
 
-        #region LoadPage
-        private async void LoadPage(object sender, RoutedEventArgs e)
-        {
-            var apiclient = new AdherentsClient("https://localhost:44345", new HttpClient());
-            var adherent = await apiclient.AllAsync();
-
-            lvAdherents.ItemsSource = adherent;
-        }
-        #endregion
 
         #region BtnAdherentDelete
-        public void BtnAdherentDelete(object sender, RoutedEventArgs e)
+        public void BtnSupprimer(object sender, RoutedEventArgs e)
         {
+   
             var apiclient = new AdherentsClient("https://localhost:44345", new HttpClient());
-            int ID = Int32.Parse(DeleteID.Text);
-            apiclient.DELETEAsync(ID);
+
+            apiclient.DELETEAsync(Int32.Parse(this.ID.Text));
+       
         }
         #endregion
     }

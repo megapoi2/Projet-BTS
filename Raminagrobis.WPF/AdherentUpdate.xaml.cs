@@ -59,9 +59,6 @@ namespace Raminagrobis.WPF
         }
         #endregion
 
-        private void UpdateDate_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
+   
     }
 }

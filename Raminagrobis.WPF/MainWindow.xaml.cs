@@ -134,7 +134,8 @@ namespace Raminagrobis.WPF
             {
                 if (Main.Content.GetType() == typeof(Adherents))
                 {
-                    Main.Content = new AdherentDelete();
+                    Raminagrobis.API.Client.Adherent_DTO adherent = (Raminagrobis.API.Client.Adherent_DTO)GestionnaireDeFenetres.Adherents.lvAdherents.SelectedItem;
+                    Main.Content = new AdherentDelete(adherent);
                 }
                 if (Main.Content.GetType() == typeof(Fournisseur))
                 {
