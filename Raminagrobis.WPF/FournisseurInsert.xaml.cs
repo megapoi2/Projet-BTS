@@ -53,6 +53,17 @@ namespace Raminagrobis.WPF
             
 
             apiclient.POSTAsync(fournisseur_DTO);
+
+
+            //Enlever ce qui est dans le input
+            InputSociete.Text = null;
+            InputCivilite.Text = null;
+            InputNom.Text = null;
+            InputPrenom.Text = null;
+            InputEmail.Text = null;
+            InputAdresse.Text = null;
+            InputActif.Text = null;
+
         }
         #endregion
 

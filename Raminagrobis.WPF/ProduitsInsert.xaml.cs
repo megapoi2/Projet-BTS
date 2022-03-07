@@ -58,6 +58,14 @@ namespace Raminagrobis.WPF
             produits_DTO.Actif = Boolean.Parse(InputActif.Text);
 
             apiclient.POSTAsync(produits_DTO);
+
+
+            //Enlever ce qui est dans le input
+            InputReference.Text = null;
+            InputLibelle.Text = null;
+            InputMarque.Text = null;
+            InputActif.Text = null;
+       
         }
         #endregion
     }

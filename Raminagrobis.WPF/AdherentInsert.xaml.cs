@@ -39,6 +39,7 @@ namespace Raminagrobis.WPF
         #region BtnInsert
         private void BtnInsert(object sender, RoutedEventArgs e)
         {
+            //Envoyé les informations vers l'api
             var apiclient = new AdherentsClient("https://localhost:44345", new HttpClient());
             Raminagrobis.API.Client.Adherent_DTO adherent_DTO = new Raminagrobis.API.Client.Adherent_DTO();
             adherent_DTO.Societe = InputSociete.Text;
@@ -50,6 +51,17 @@ namespace Raminagrobis.WPF
             adherent_DTO.Date_adhesion = DateTime.Now;
 
             apiclient.POSTAsync(adherent_DTO);
+
+
+            //Enlever ce qui est dans le input
+            InputSociete.Text = null;
+            InputCivilite.Text = null;
+            InputNom.Text = null;
+            InputPrenom.Text = null;
+            InputEmail.Text = null;
+            InputActif.Text = null;
+            
+
         }
         #endregion
     }
