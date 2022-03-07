@@ -47,7 +47,7 @@ namespace Raminagrobis.WPF
                 Actif = Boolean.Parse(this.UpdateActif.Text),
             };
 
-            apiclient.ProduitsPUTAsync(Int32.Parse(this.ID.Text), produits);
+           // apiclient.ProduitsPUTAsync(Int32.Parse(this.ID.Text), produits);
         }
         #endregion
     }

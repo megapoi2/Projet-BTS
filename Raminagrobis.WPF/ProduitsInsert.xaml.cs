@@ -23,6 +23,7 @@ namespace Raminagrobis.WPF
     /// </summary>
     public partial class ProduitsInsert : Page
     {
+        public string[] files;
         public ProduitsInsert()
         {
             InitializeComponent();
@@ -35,6 +36,17 @@ namespace Raminagrobis.WPF
         }
         #endregion
 
+        private void ImagePanel_Drop(object sender, DragEventArgs e)
+        {
+
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            }
+        }
+
+
         #region BtnInsert
         private void BtnInsert(object sender, RoutedEventArgs e)
         {
@@ -45,7 +57,7 @@ namespace Raminagrobis.WPF
             produits_DTO.Marque = InputMarque.Text;
             produits_DTO.Actif = Boolean.Parse(InputActif.Text);
 
-            apiclient.ProduitsPOSTAsync(produits_DTO);
+            //apiclient.ProduitsPOSTAsync(produits_DTO, files[0]);
         }
         #endregion
     }
