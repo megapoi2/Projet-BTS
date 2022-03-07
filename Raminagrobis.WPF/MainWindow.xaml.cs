@@ -33,7 +33,7 @@ namespace Raminagrobis.WPF
         #region LoadPage
         private void LoadPage(object sender, RoutedEventArgs e)
         {
-            var apiclient = new Client("https://localhost:/44345", new HttpClient());
+           // var apiclient = new Client("https://localhost:/44345", new HttpClient());
             GestionnaireDeFenetres.MainWindow = this;
         }
         #endregion
@@ -110,17 +110,17 @@ namespace Raminagrobis.WPF
             {
                 if (Main.Content.GetType() == typeof(Adherents))
                 {
-                    Adherent_DTO adherent = (Adherent_DTO)GestionnaireDeFenetres.Adherents.lvAdherents.SelectedItem;
+                    Raminagrobis.DTO.DTO.Adherent_DTO adherent = (Raminagrobis.DTO.DTO.Adherent_DTO)GestionnaireDeFenetres.Adherents.lvAdherents.SelectedItem;
                     Main.Content = new AdherentUpdate(adherent);
                 }
                 if (Main.Content.GetType() == typeof(Fournisseur))
                 {
-                    Fournisseur_DTO fournisseur = (Fournisseur_DTO)GestionnaireDeFenetres.Fournisseur.lvFournisseurs.SelectedItem;
+                    Raminagrobis.DTO.DTO.Fournisseur_DTO fournisseur = (Raminagrobis.DTO.DTO.Fournisseur_DTO)GestionnaireDeFenetres.Fournisseur.lvFournisseurs.SelectedItem;
                     Main.Content = new FournisseurUpdate(fournisseur);
                 }
                 if (Main.Content.GetType() == typeof(Produits))
                 {
-                    Produits_DTO produits = (Produits_DTO)GestionnaireDeFenetres.Produits.lvProduits.SelectedItem;
+                    Raminagrobis.DTO.DTO.Produits_DTO produits = (Raminagrobis.DTO.DTO.Produits_DTO)GestionnaireDeFenetres.Produits.lvProduits.SelectedItem;
                     Main.Content = new ProduitsUpdate(produits);
                 }
             }

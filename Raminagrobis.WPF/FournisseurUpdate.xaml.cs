@@ -24,7 +24,7 @@ namespace Raminagrobis.WPF
     public partial class FournisseurUpdate : Page
     {
         #region FournisseurUpdate
-        public FournisseurUpdate(Fournisseur_DTO fournisseur)
+        public FournisseurUpdate(Raminagrobis.DTO.DTO.Fournisseur_DTO fournisseur)
         {
             InitializeComponent();
             this.UpdateSociete.Text = fournisseur.Societe;
@@ -41,8 +41,8 @@ namespace Raminagrobis.WPF
         #region BtnUpdate
         public void BtnUpdate(object sender, RoutedEventArgs e)
         {
-            var apiclient = new Client("https://localhost:44355/", new HttpClient());
-            Fournisseur_DTO fournisseur = new Fournisseur_DTO()
+            var apiclient = new FournisseursClient("https://localhost:44355/", new HttpClient());
+            Raminagrobis.API.Client.Fournisseur_DTO fournisseur = new Raminagrobis.API.Client.Fournisseur_DTO()
             {
                 Societe = this.UpdateSociete.Text,
                 Civilite = Boolean.Parse(this.UpdateCivilite.Text),
@@ -53,7 +53,7 @@ namespace Raminagrobis.WPF
                 Actif = Boolean.Parse(this.UpdateActif.Text),
             };
 
-            apiclient.FournisseursPUTAsync(Int32.Parse(this.ID.Text), fournisseur);
+            apiclient.PUTAsync(Int32.Parse(this.ID.Text), fournisseur);
         }
         #endregion
     }

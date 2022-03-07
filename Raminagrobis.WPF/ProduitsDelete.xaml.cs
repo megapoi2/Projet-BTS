@@ -31,8 +31,8 @@ namespace Raminagrobis.WPF
         #region LoadPage
         private async void LoadPage(object sender, RoutedEventArgs e)
         {
-            var apiclient = new Client("https://localhost:/44345", new HttpClient());
-            var produits = await apiclient.AdherentAllAsync();
+            var apiclient = new ProduitsClient("https://localhost:/44345", new HttpClient());
+            var produits = await apiclient.AllAsync();
 
             lvProduits.ItemsSource = produits;
         }
@@ -41,9 +41,9 @@ namespace Raminagrobis.WPF
         #region BtnProduitsDelete
         public void BtnProduitsDelete(object sender, RoutedEventArgs e)
         {
-            var apiclient = new Client("https://localhost:/44345", new HttpClient());
+            var apiclient = new ProduitsClient("https://localhost:/44345", new HttpClient());
             int ID = Int32.Parse(DeleteID.Text);
-            apiclient.PanierDELETEAsync(ID);
+            apiclient.DELETEAsync(ID);
         }
         #endregion
     }

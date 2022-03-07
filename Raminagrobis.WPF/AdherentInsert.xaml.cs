@@ -31,24 +31,25 @@ namespace Raminagrobis.WPF
         #region LoadPage
         private async void LoadPage(object sender, RoutedEventArgs e)
         {
-            var apiclient = new Client("https://localhost:/44345", new HttpClient());
-            var adherent = await apiclient.AdherentAllAsync();
+            var apiclient = new AdherentsClient("https://localhost:44345", new HttpClient());
+            var adherent = await apiclient.AllAsync();
         }
         #endregion
 
         #region BtnInsert
         private void BtnInsert(object sender, RoutedEventArgs e)
         {
-            var apiclient = new Client("https://localhost:/44345", new HttpClient());
-            Adherent_DTO adherent_DTO = new Adherent_DTO();
+            var apiclient = new AdherentsClient("https://localhost:44345", new HttpClient());
+            Raminagrobis.API.Client.Adherent_DTO adherent_DTO = new Raminagrobis.API.Client.Adherent_DTO();
             adherent_DTO.Societe = InputSociete.Text;
             adherent_DTO.Civilite = Boolean.Parse(InputCivilite.Text);
             adherent_DTO.Nom = InputNom.Text;
             adherent_DTO.Prenom = InputNom.Text;
             adherent_DTO.Email = InputEmail.Text;
             adherent_DTO.Actif = Boolean.Parse(InputActif.Text);
+            adherent_DTO.Date_adhesion = DateTime.Now;
 
-            apiclient.AdherentPOSTAsync(adherent_DTO);
+            apiclient.POSTAsync(adherent_DTO);
         }
         #endregion
     }

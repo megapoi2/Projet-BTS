@@ -33,8 +33,8 @@ namespace Raminagrobis.WPF
         #region LoadPage
         private async void LoadPage(object sender, RoutedEventArgs e)
         {
-            var apiclient = new Client("https://localhost:/44345", new HttpClient());
-            var produit = await apiclient.AdherentAllAsync();
+            var apiclient = new ProduitsClient("https://localhost:/44345", new HttpClient());
+            var produit = await apiclient.AllAsync();
 
             lvProduits.ItemsSource = produit;
         }

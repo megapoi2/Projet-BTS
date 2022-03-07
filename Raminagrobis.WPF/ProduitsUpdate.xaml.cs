@@ -24,7 +24,7 @@ namespace Raminagrobis.WPF
     public partial class ProduitsUpdate : Page
     {
         #region ProduitsUpdate
-        public ProduitsUpdate(Produits_DTO produits)
+        public ProduitsUpdate(Raminagrobis.DTO.DTO.Produits_DTO produits)
         {
             InitializeComponent();
             this.UpdateReference.Text = produits.Reference;
@@ -38,8 +38,8 @@ namespace Raminagrobis.WPF
         #region BtnUpdate
         public void BtnUpdate(object sender, RoutedEventArgs e)
         {
-            var apiclient = new Client("https://localhost:44355/", new HttpClient());
-            Produits_DTO produits = new Produits_DTO()
+            var apiclient = new ProduitsClient("https://localhost:44355/", new HttpClient());
+            Raminagrobis.DTO.DTO.Produits_DTO produits = new Raminagrobis.DTO.DTO.Produits_DTO()
             {
                 Reference = this.UpdateReference.Text,
                 Libelle = this.UpdateLibelle.Text,
