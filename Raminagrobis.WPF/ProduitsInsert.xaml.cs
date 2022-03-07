@@ -15,6 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Raminagrobis.API.Client;
 using Raminagrobis.DTO.DTO;
+using Microsoft.Win32;
+using System.IO;
 
 namespace Raminagrobis.WPF
 {
@@ -50,6 +52,7 @@ namespace Raminagrobis.WPF
         #region BtnInsert
         private void BtnInsert(object sender, RoutedEventArgs e)
         {
+            /*
             var apiclient = new ProduitsClient("https://localhost:44345", new HttpClient());
             Raminagrobis.API.Client.Produits_DTO produits_DTO = new Raminagrobis.API.Client.Produits_DTO();
             produits_DTO.Reference = InputReference.Text;
@@ -65,7 +68,12 @@ namespace Raminagrobis.WPF
             InputLibelle.Text = null;
             InputMarque.Text = null;
             InputActif.Text = null;
-       
+            */
+
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
         }
         #endregion
     }
