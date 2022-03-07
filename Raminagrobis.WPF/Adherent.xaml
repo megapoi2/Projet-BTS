@@ -13,7 +13,7 @@
             <RowDefinition Height="225"/>
             <RowDefinition Height="225"/>
         </Grid.RowDefinitions>
-        <ListView Name="lvAdherents" Margin="0,35,0,0" Grid.RowSpan="2">
+        <ListView Name="lvAdherents" Margin="0,35,0,62" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Societe" Width="100" DisplayMemberBinding="{Binding Societe}" />
@@ -23,9 +23,11 @@
                     <GridViewColumn Header="Civilite" Width="100" DisplayMemberBinding="{Binding Civilite}" />
                     <GridViewColumn Header="Date Adhesion" Width="100" DisplayMemberBinding="{Binding Date_adhesion}" />
                     <GridViewColumn Header="Actif" Width="100" DisplayMemberBinding="{Binding Actif}" />
-                    <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding ID}" />
+                    
                 </GridView>
+                
             </ListView.View>
         </ListView>
+        <Button Content="Afficher" Margin="335,168,355,17" Click="LoadPage" Grid.Row="1"/>
     </Grid>
 </Page>

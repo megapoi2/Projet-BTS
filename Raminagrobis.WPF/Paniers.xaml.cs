@@ -30,7 +30,7 @@ namespace Raminagrobis.WPF
         #region LoadPage
         private async void LoadPage(object sender, RoutedEventArgs e)
         {
-            var apiclient = new PaniersClient("https://localhost:/44345", new HttpClient());
+            var apiclient = new PaniersClient("https://localhost:44345", new HttpClient());
             var panier = await apiclient.AllAsync();
 
             lvPaniers.ItemsSource = panier;

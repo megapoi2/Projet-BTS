@@ -13,7 +13,7 @@
             <RowDefinition Height="225"/>
             <RowDefinition Height="225"/>
         </Grid.RowDefinitions>
-        <ListView Name="lvPaniers" Margin="0,35,0,0" Grid.RowSpan="2">
+        <ListView Name="lvPaniers" Margin="0,35,0,66" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Libelle" Width="100" DisplayMemberBinding="{Binding Libelle}" />
@@ -21,5 +21,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button Content="Afficher" Margin="345,175,345,10" Click="LoadPage" Grid.Row="1"/>
     </Grid>
 </Page>

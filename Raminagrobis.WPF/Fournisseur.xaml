@@ -8,12 +8,12 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Fournisseur">
 
-    <Grid>
+    <Grid Margin="0,0,0,73">
         <Grid.RowDefinitions>
             <RowDefinition Height="173*"/>
             <RowDefinition Height="277*"/>
         </Grid.RowDefinitions>
-        <ListView Name="lvFournisseurs" Margin="0,35,0,0" Grid.RowSpan="2">
+        <ListView Name="lvFournisseurs" Margin="0,0,0,-14" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Societe" Width="90" DisplayMemberBinding="{Binding Societe}" />
@@ -23,9 +23,11 @@
                     <GridViewColumn Header="Email" Width="110" DisplayMemberBinding="{Binding Email}" />
                     <GridViewColumn Header="Adresse" Width="140" DisplayMemberBinding="{Binding Adresse}" />
                     <GridViewColumn Header="Actif" Width="90" DisplayMemberBinding="{Binding Actif}" />
-                    <GridViewColumn Header="ID" Width="90" DisplayMemberBinding="{Binding ID}" />
+                    
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button Content="Afficher" Margin="345,251,345,-66" Click="LoadPage" Grid.Row="1"/>
     </Grid>
+    
 </Page>

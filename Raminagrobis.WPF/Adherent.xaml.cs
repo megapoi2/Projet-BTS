@@ -34,10 +34,9 @@ namespace Raminagrobis.WPF
         private async void LoadPage(object sender, RoutedEventArgs e)
         {
 
-            var apiclient = new AdherentsClient("https://localhost:/44345", new HttpClient());
+            var apiclient = new AdherentsClient("https://localhost:44345", new HttpClient());
             var adherent = await apiclient.AllAsync();
 
-      
            lvAdherents.ItemsSource = adherent;
             
         }

@@ -9,16 +9,17 @@
       Title="Produits">
 
     <Grid>
-        <ListView Name="lvProduits" Margin="0,35,0,0">
+        <ListView Name="lvProduits" Margin="0,35,0,74">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Reference " Width="160" DisplayMemberBinding="{Binding Reference }" />
                     <GridViewColumn Header="Libelle" Width="160" DisplayMemberBinding="{Binding Libelle}" />
                     <GridViewColumn Header="Marque" Width="160" DisplayMemberBinding="{Binding Marque}" />
                     <GridViewColumn Header="Actif" Width="160" DisplayMemberBinding="{Binding Actif}" />
-                    <GridViewColumn Header="ID" Width="160" DisplayMemberBinding="{Binding ID}" />
+
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button Content="Afficher" Margin="313,381,378,16" Click="LoadPage" RenderTransformOrigin="0.513,0.618"/>
     </Grid>
 </Page>
