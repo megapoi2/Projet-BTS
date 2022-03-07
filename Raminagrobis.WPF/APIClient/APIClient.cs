@@ -2074,7 +2074,7 @@ namespace Raminagrobis.API.Client
         public bool Actif { get; set; }
 
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? Id { get; set; }
+        public int? ID { get; set; }
 
     }
 
@@ -2103,7 +2103,7 @@ namespace Raminagrobis.API.Client
         public bool Actif { get; set; }
 
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? Id { get; set; }
+        public int? ID { get; set; }
 
     }
 
@@ -2114,7 +2114,7 @@ namespace Raminagrobis.API.Client
         public string Libelle { get; set; }
 
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? Id { get; set; }
+        public int? ID { get; set; }
 
     }
 
@@ -2134,7 +2134,7 @@ namespace Raminagrobis.API.Client
         public bool Actif { get; set; }
 
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int? Id { get; set; }
+        public int? ID { get; set; }
 
     }
 

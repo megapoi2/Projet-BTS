@@ -24,7 +24,7 @@ namespace Raminagrobis.WPF
     public partial class AdherentUpdate : Page
     {
         #region AdherentUpdate
-        public AdherentUpdate(Raminagrobis.DTO.DTO.Adherent_DTO adherent)
+        public AdherentUpdate(Raminagrobis.API.Client.Adherent_DTO adherent)
         {
             InitializeComponent();
             this.UpdateSociete.Text = adherent.Societe;
@@ -40,7 +40,7 @@ namespace Raminagrobis.WPF
         #region BtnUpdate
         public void BtnUpdate(object sender, RoutedEventArgs e)
         {
-            var apiclient = new AdherentsClient("https://localhost:44355/", new HttpClient());
+            var apiclient = new AdherentsClient("https://localhost:44355", new HttpClient());
             Raminagrobis.API.Client.Adherent_DTO adherent = new Raminagrobis.API.Client.Adherent_DTO()
             {
                 Societe = this.UpdateSociete.Text,

@@ -110,7 +110,7 @@ namespace Raminagrobis.WPF
             {
                 if (Main.Content.GetType() == typeof(Adherents))
                 {
-                    Raminagrobis.DTO.DTO.Adherent_DTO adherent = (Raminagrobis.DTO.DTO.Adherent_DTO)GestionnaireDeFenetres.Adherents.lvAdherents.SelectedItem;
+                    Raminagrobis.API.Client.Adherent_DTO adherent = (Raminagrobis.API.Client.Adherent_DTO)GestionnaireDeFenetres.Adherents.lvAdherents.SelectedItem;
                     Main.Content = new AdherentUpdate(adherent);
                 }
                 if (Main.Content.GetType() == typeof(Fournisseur))

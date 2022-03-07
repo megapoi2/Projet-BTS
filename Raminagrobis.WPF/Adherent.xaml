@@ -23,6 +23,7 @@
                     <GridViewColumn Header="Civilite" Width="100" DisplayMemberBinding="{Binding Civilite}" />
                     <GridViewColumn Header="Date Adhesion" Width="100" DisplayMemberBinding="{Binding Date_adhesion}" />
                     <GridViewColumn Header="Actif" Width="100" DisplayMemberBinding="{Binding Actif}" />
+                    <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding ID}" />
                     
                 </GridView>
                 
