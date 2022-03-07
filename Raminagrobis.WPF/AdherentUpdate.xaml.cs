@@ -34,13 +34,14 @@ namespace Raminagrobis.WPF
             this.UpdateEmail.Text = adherent.Email;
             this.UpdateActif.Text = adherent.Actif.ToString();
             this.ID.Text = adherent.ID.ToString();
+            this.UpdateDate.Text = adherent.Date_adhesion.ToString();
         }
         #endregion
 
         #region BtnUpdate
         public void BtnUpdate(object sender, RoutedEventArgs e)
         {
-            var apiclient = new AdherentsClient("https://localhost:44355", new HttpClient());
+            var apiclient = new AdherentsClient("https://localhost:44345", new HttpClient());
             Raminagrobis.API.Client.Adherent_DTO adherent = new Raminagrobis.API.Client.Adherent_DTO()
             {
                 Societe = this.UpdateSociete.Text,
@@ -48,11 +49,19 @@ namespace Raminagrobis.WPF
                 Nom = this.UpdateNom.Text,
                 Prenom = this.UpdatePrenom.Text,
                 Email = this.UpdateEmail.Text,
-                Actif = Boolean.Parse(this.UpdateActif.Text),
+                Date_adhesion = DateTimeOffset.Parse(this.UpdateDate.Text),
+                Actif = Boolean.Parse(this.UpdateActif.Text)
+               
+
             };
 
             apiclient.PUTAsync(Int32.Parse(this.ID.Text), adherent);
         }
         #endregion
+
+        private void UpdateDate_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

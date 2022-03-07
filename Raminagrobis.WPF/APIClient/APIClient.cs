@@ -15,6 +15,7 @@
 
 namespace Raminagrobis.API.Client
 {
+    using System;
     using System = global::System;
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v12.0.0.0))")]
@@ -336,12 +337,22 @@ namespace Raminagrobis.API.Client
                             throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
                     finally
                     {
                         if (disposeResponse_)
                             response_.Dispose();
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
             finally
             {
