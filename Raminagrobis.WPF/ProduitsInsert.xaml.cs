@@ -52,28 +52,26 @@ namespace Raminagrobis.WPF
         #region BtnInsert
         private void BtnInsert(object sender, RoutedEventArgs e)
         {
-            /*
-            var apiclient = new ProduitsClient("https://localhost:44345", new HttpClient());
-            Raminagrobis.API.Client.Produits_DTO produits_DTO = new Raminagrobis.API.Client.Produits_DTO();
-            produits_DTO.Reference = InputReference.Text;
-            produits_DTO.Libelle = InputLibelle.Text;
-            produits_DTO.Marque = InputMarque.Text;
-            produits_DTO.Actif = Boolean.Parse(InputActif.Text);
-
-            apiclient.POSTAsync(produits_DTO);
-
-
-            //Enlever ce qui est dans le input
-            InputReference.Text = null;
-            InputLibelle.Text = null;
-            InputMarque.Text = null;
-            InputActif.Text = null;
-            */
-
-
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
-                txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
+            {
+                var AllLine = File.ReadAllLines(openFileDialog.FileName);
+                var length = AllLine.Length;
+                for (int i = 1; i < length; i++)
+                {
+                    var ligne = AllLine[i].Split(';');
+
+                    var apiclient = new ProduitsClient("https://localhost:44345", new HttpClient());
+                    Raminagrobis.API.Client.Produits_DTO produits_DTO = new Raminagrobis.API.Client.Produits_DTO();
+                    produits_DTO.Reference = ligne[0];
+                    produits_DTO.Libelle = ligne[1];
+                    produits_DTO.Marque = ligne[2];
+                    produits_DTO.Actif = true;
+                    apiclient.POSTAsync(produits_DTO);
+
+                }
+                txtEditor.Text = "CSV envoyé avec succès ! ( " + length + " ligne(s) ajoutée(s) )";
+            }
         }
         #endregion
     }
