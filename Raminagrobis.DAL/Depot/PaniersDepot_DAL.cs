@@ -15,14 +15,15 @@ namespace Raminagrobis.DAL.Depot
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "SELECT libelle FROM Paniers";
+            commande.CommandText = "SELECT ID, libelle FROM Paniers";
             var reader = commande.ExecuteReader();
 
             var listeProduits = new List<Paniers_DAL>();
 
             while (reader.Read())
             {
-                var paniers = new Paniers_DAL(reader.GetString(0));
+                var paniers = new Paniers_DAL(reader.GetInt32(0),
+                                              reader.GetString(1));
 
                 listeProduits.Add(paniers);
             }

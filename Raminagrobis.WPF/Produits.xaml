@@ -12,6 +12,7 @@
         <ListView Name="lvProduits" Margin="0,35,0,74">
             <ListView.View>
                 <GridView>
+                    <GridViewColumn Header="ID" Width="160" DisplayMemberBinding="{Binding ID }" />
                     <GridViewColumn Header="Reference " Width="160" DisplayMemberBinding="{Binding Reference }" />
                     <GridViewColumn Header="Libelle" Width="160" DisplayMemberBinding="{Binding Libelle}" />
                     <GridViewColumn Header="Marque" Width="160" DisplayMemberBinding="{Binding Marque}" />
