@@ -74,9 +74,16 @@ namespace Raminagrobis.WPF
                     produits_DTO.Actif = true;
                     apiclient.POSTAsync(produits_DTO);
 
+                    
                 }
-                
+
             }
+            /*var Fournisseur = lvFournisseurs.SelectedItem as Raminagrobis.DTO.DTO.Fournisseur_DTO;
+            
+                var apiclient2 = new LiaisonClient("https://localhost:44345", new HttpClient());
+            
+            Fournisseur.ID;
+           */
         }
         #endregion
     }
