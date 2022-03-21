@@ -11,72 +11,33 @@ namespace Raminagrobis.API.Controllers
     [Route("[controller]")]
     public class Liaison_Controller : ControllerBase
     {
-        private Adherents_Services service;
+        private Liaison_Services service;
 
-        public Liaison_Controller(Adherents_Services srv)
+        public Liaison_Controller(Liaison_Services srv)
         {
             service = srv;
         }
 
         #region GetAll
         [HttpGet]
-        public IEnumerable<Adherent_DTO> GetAll()
+        public IEnumerable<Liaison_DTO> GetAll()
         {
-            return service.GetAll().Select(item => new Adherent_DTO()
+            return service.GetAll().Select(item => new Liaison_DTO()
             {
-                ID = item.ID,
-                Societe = item.Societe,
-                Civilite = item.Civilite,
-                Nom = item.Nom,
-                Prenom = item.Prenom,
-                Email = item.Email,
-                Date_adhesion = item.Date_adhesion,
-                Actif = item.Actif,
+                ID_fournisseur = item.ID_fournisseur,
+                ID_produit = item.ID_produit,
             });
         }
         #endregion
 
-        #region GetByID
-        [HttpGet("{id}")]
-        public Adherent_DTO GetByID(int id)
-        {
-            var item = service.GetByID(id);
-            return new Adherent_DTO()
-            {
-                ID = item.ID,
-                Societe = item.Societe,
-                Civilite = item.Civilite,
-                Nom = item.Nom,
-                Prenom = item.Prenom,
-                Email = item.Email,
-                Date_adhesion = item.Date_adhesion,
-                Actif = item.Actif,
-            };
-        }
-        #endregion
 
         #region Insert
         [HttpPost]
-        public void Insert([FromBody] Adherent_DTO item)
+        public void Insert([FromBody] Liaison_DTO item)
         {
             service.Insert(item);
         }
         #endregion
 
-        #region Update
-        [HttpPut("{id}")]
-        public void Update(int id, [FromBody] Adherent_DTO item)
-        {
-            service.Update(id, item);
-        }
-        #endregion
-
-        #region Delete
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-            service.Delete(id);
-        }
-        #endregion
     }
 }

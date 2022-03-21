@@ -46,7 +46,7 @@ namespace Raminagrobis.METIER.Services
         #region Update
         public void Update(int id, LignesGlobal_DTO input)
         {
-            var LignesGlobal = new LignesGlobal_DAL(id, input.ID_panier, input.Quantite, input.ID_produit);
+            var LignesGlobal = new LignesGlobal_DAL(input.ID_panier, input.Quantite, input.ID_produit);
             var depot = new LignesGlobalDepot_DAL();
             depot.Update(LignesGlobal);
         }

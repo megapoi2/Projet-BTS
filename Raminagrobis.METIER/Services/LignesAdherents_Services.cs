@@ -10,7 +10,7 @@ using Raminagrobis.METIER.Metier;
 
 namespace Raminagrobis.METIER.Services
 {
-    public class LignesLignesAdherentss_Services
+    public class LignesAdherents_Services
     {
         #region GetAll
         public List<LignesAdherents_METIER> GetAll()
