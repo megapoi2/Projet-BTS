@@ -16,7 +16,7 @@
         <ListView Name="lvAdherents" Margin="0,35,0,62" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding ID}" />
+                    <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding Id}" />
                     <GridViewColumn Header="Societe" Width="100" DisplayMemberBinding="{Binding Societe}" />
                     <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding Nom}" />
                     <GridViewColumn Header="Prenom" Width="100" DisplayMemberBinding="{Binding Prenom}" />

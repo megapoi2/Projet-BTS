@@ -33,7 +33,7 @@ namespace Raminagrobis.WPF
             this.UpdatePrenom.Text = adherent.Prenom;
             this.UpdateEmail.Text = adherent.Email;
             this.UpdateActif.Text = adherent.Actif.ToString();
-            this.ID.Text = adherent.ID.ToString();
+            this.ID.Text = adherent.Id.ToString();
             this.UpdateDate.Text = adherent.Date_adhesion.ToString();
         }
         #endregion

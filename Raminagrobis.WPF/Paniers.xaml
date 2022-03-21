@@ -16,7 +16,7 @@
         <ListView Name="lvPaniers" Margin="0,35,0,66" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding ID}" />
+                    <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding Id}" />
                     <GridViewColumn Header="Libelle" Width="100" DisplayMemberBinding="{Binding Libelle}" />
                     
                 </GridView>
