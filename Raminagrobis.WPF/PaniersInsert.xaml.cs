@@ -21,25 +21,21 @@ using System.IO;
 namespace Raminagrobis.WPF
 {
     /// <summary>
-    /// Logique d'interaction pour FournisseurDelete.xaml
+    /// Logique d'interaction pour PaniersInsert.xaml
     /// </summary>
-    public partial class ProduitsInsert : Page
+    public partial class PaniersInsert : Page
     {
         public string[] files;
-        public ProduitsInsert()
+        public PaniersInsert()
         {
             InitializeComponent();
         }
+
         #region LoadPage
         private async void LoadPage(object sender, RoutedEventArgs e)
         {
-            var apiclient = new ProduitsClient("https://localhost:44345", new HttpClient());
-            var adherent = await apiclient.AllAsync();
-
-            var apiclientFourni = new FournisseursClient("https://localhost:44345", new HttpClient());
-            var fournisseur = await apiclientFourni.AllAsync();
-
-            lvFournisseurs.ItemsSource = fournisseur;
+            var apiclient = new PaniersClient("https://localhost:44345", new HttpClient());
+            var paniers = await apiclient.AllAsync();
         }
         #endregion
 
@@ -66,16 +62,13 @@ namespace Raminagrobis.WPF
                 {
                     var ligne = AllLine[i].Split(';');
 
-                    var apiclient = new ProduitsClient("https://localhost:44345", new HttpClient());
-                    Raminagrobis.API.Client.Produits_DTO produits_DTO = new Raminagrobis.API.Client.Produits_DTO();
-                    produits_DTO.Reference = ligne[0];
-                    produits_DTO.Libelle = ligne[1];
-                    produits_DTO.Marque = ligne[2];
-                    produits_DTO.Actif = true;
-                    apiclient.POSTAsync(produits_DTO);
+                    var apiclient = new PaniersClient("https://localhost:44345", new HttpClient());
+                    Raminagrobis.API.Client.Paniers_DTO paniers_DTO = new Raminagrobis.API.Client.Paniers_DTO();
+                    paniers_DTO.Libelle = ligne[0];
+                    apiclient.POSTAsync(paniers_DTO);
 
                 }
-                
+                txtEditor.Text = "CSV envoyé avec succès ! ( " + length + " ligne(s) ajoutée(s) )";
             }
         }
         #endregion

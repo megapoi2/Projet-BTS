@@ -99,6 +99,10 @@ namespace Raminagrobis.WPF
                 {
                     Main.Content = new ProduitsInsert();
                 }
+                if (Main.Content.GetType() == typeof(Paniers))
+                {
+                    Main.Content = new PaniersInsert();
+                }
             }
         }
         #endregion

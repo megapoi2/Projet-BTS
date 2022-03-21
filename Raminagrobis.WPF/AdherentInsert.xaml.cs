@@ -45,7 +45,7 @@ namespace Raminagrobis.WPF
             adherent_DTO.Societe = InputSociete.Text;
             adherent_DTO.Civilite = Boolean.Parse(InputCivilite.Text);
             adherent_DTO.Nom = InputNom.Text;
-            adherent_DTO.Prenom = InputNom.Text;
+            adherent_DTO.Prenom = InputPrenom.Text;
             adherent_DTO.Email = InputEmail.Text;
             adherent_DTO.Actif = Boolean.Parse(InputActif.Text);
             adherent_DTO.Date_adhesion = DateTime.Now;

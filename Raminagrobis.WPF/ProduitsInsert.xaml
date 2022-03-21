@@ -13,9 +13,25 @@
             <RowDefinition Height="225"/>
             <RowDefinition Height="225"/>
         </Grid.RowDefinitions>
+        <ListView Name="lvFournisseurs" Margin="0,100,0,161" Grid.RowSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="90" DisplayMemberBinding="{Binding ID}" />
+                    <GridViewColumn Header="Societe" Width="90" DisplayMemberBinding="{Binding Societe}" />
+                    <GridViewColumn Header="Civilite" Width="90" DisplayMemberBinding="{Binding Civilite}" />
+                    <GridViewColumn Header="Nom" Width="90" DisplayMemberBinding="{Binding Nom}" />
+                    <GridViewColumn Header="Prenom" Width="90" DisplayMemberBinding="{Binding Prenom}" />
+                    <GridViewColumn Header="Email" Width="110" DisplayMemberBinding="{Binding Email}" />
+                    <GridViewColumn Header="Adresse" Width="140" DisplayMemberBinding="{Binding Adresse}" />
+                    <GridViewColumn Header="Actif" Width="90" DisplayMemberBinding="{Binding Actif}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Afficher" Margin="345,88,345,97" Click="LoadPage" Grid.Row="1"/>
+        
         <TextBlock x:Name="Ajouter" Text="Ajouter Produits" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="32px" Height="42" Width="276" Margin="0,35,0,0"/>
-        <TextBox Name="txtEditor" Margin="0,112,0,112" Grid.RowSpan="2" />
-        <Button Content="Insert" Margin="328,125,362,60" Click="BtnInsert" Grid.Row="1"/>
+        
+        <Button Content="Insert" Margin="345,159,345,26" Click="BtnInsert" Grid.Row="1"/>
         <StackPanel Name="ImagePanel" Drop="ImagePanel_Drop" AllowDrop="true" Margin="0,0,0,10" Grid.RowSpan="2"/>
 
     </Grid>
