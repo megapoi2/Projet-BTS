@@ -33,9 +33,10 @@ namespace Raminagrobis.API.Controllers
 
         #region Insert
         [HttpPost]
-        public void Insert([FromBody] Liaison_DTO item)
+        public Liaison_DTO Insert([FromBody] Liaison_DTO item)
         {
             service.Insert(item);
+            return item;
         }
         #endregion
 

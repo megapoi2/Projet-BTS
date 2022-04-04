@@ -57,9 +57,10 @@ namespace Raminagrobis.API.Controllers
 
         #region Insert
         [HttpPost]
-        public void Insert([FromBody] Fournisseur_DTO item)
+        public Fournisseur_DTO Insert([FromBody] Fournisseur_DTO item)
         {
             service.Insert(item);
+            return item;
         }
         #endregion
 

@@ -35,11 +35,15 @@ namespace Raminagrobis.METIER.Services
         #endregion
 
         #region Insert
-        public void Insert(Produits_DTO input)
+        public Produits_DTO Insert(Produits_DTO input)
         {
             var produits = new Produits_DAL(input.Reference, input.Libelle, input.Marque, input.Actif);
             var depot = new ProduitsDepot_DAL();
             depot.Insert(produits);
+
+            input.ID = produits.ID;
+
+            return input;
         }
         #endregion
 

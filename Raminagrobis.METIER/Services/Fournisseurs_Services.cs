@@ -37,11 +37,14 @@ namespace Raminagrobis.METIER.Services
         #endregion
 
         #region Insert
-        public void Insert(Fournisseur_DTO input)
+        public Fournisseur_DTO Insert(Fournisseur_DTO input)
         {
             var fournisseurs = new Fournisseurs_DAL(input.Societe, input.Civilite, input.Nom, input.Prenom, input.Email, input.Adresse, input.Actif);
             var depot = new FournisseursDepot_DAL();
             depot.Insert(fournisseurs);
+            input.ID = fournisseurs.ID;
+
+            return input;
         }
         #endregion
 

@@ -35,11 +35,14 @@ namespace Raminagrobis.METIER.Services
         #endregion
 
         #region Insert
-        public void Insert(Paniers_DTO input)
+        public Paniers_DTO Insert(Paniers_DTO input)
         {
             var paniers = new Paniers_DAL(input.Libelle);
             var depot = new PaniersDepot_DAL();
             depot.Insert(paniers);
+            input.ID = paniers.ID;
+
+            return input;
         }
         #endregion
 

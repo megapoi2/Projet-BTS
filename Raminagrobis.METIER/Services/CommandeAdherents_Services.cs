@@ -35,11 +35,14 @@ namespace Raminagrobis.METIER.Services
         #endregion
 
         #region Insert
-        public void Insert(CommandeAdherent_DTO input)
+        public CommandeAdherent_DTO Insert(CommandeAdherent_DTO input)
         {
             var CommandeAdherents = new CommandeAdherents_DAL(input.ID_adherent, input.ID_panier);
             var depot = new CommandeAdherentsDepot_DAL();
             depot.Insert(CommandeAdherents);
+            input.ID = CommandeAdherents.ID;
+
+            return input;
         }
         #endregion
 

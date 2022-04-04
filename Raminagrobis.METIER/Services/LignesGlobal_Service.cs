@@ -35,11 +35,13 @@ namespace Raminagrobis.METIER.Services
         #endregion
 
         #region Insert
-        public void Insert(LignesGlobal_DTO input)
+        public LignesGlobal_DTO Insert(LignesGlobal_DTO input)
         {
             var LignesGlobal = new LignesGlobal_DAL(input.ID_panier, input.Quantite, input.ID_produit);
             var depot = new LignesGlobalDepot_DAL();
             depot.Insert(LignesGlobal);
+            input.ID = LignesGlobal.ID;
+            return input;
         }
         #endregion
 

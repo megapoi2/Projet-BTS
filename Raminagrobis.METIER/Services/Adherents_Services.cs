@@ -35,11 +35,14 @@ namespace Raminagrobis.METIER.Services
         #endregion
 
         #region Insert
-        public void Insert(Adherent_DTO input)
+        public Adherent_DTO Insert(Adherent_DTO input)
         {
             var adherent = new Adherent_DAL(input.Societe, input.Civilite, input.Nom, input.Prenom, input.Email, input.Date_adhesion, input.Actif);
             var depot = new AdherentDepot_DAL();
             depot.Insert(adherent);
+            input.ID = adherent.ID;
+
+            return input;
         }
         #endregion
 
