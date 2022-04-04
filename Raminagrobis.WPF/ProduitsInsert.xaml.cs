@@ -79,7 +79,7 @@ namespace Raminagrobis.WPF
                     Raminagrobis.API.Client.Liaison_DTO liaison_DTO = new Raminagrobis.API.Client.Liaison_DTO();
                     liaison_DTO.ID_fournisseur = (int)Fournisseur.Id;
                     liaison_DTO.ID_produit = (int)produits_DTO.Id;
-                    liaison_DTO = apiclient2.POSTAsync(liaison_DTO).Result;
+                    //apiclient2.POSTAsync(liaison_DTO);
 
                 }
 
