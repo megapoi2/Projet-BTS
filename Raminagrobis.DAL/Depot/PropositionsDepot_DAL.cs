@@ -109,8 +109,7 @@ namespace Raminagrobis.DAL.Depot
             commande.Parameters.Add(new SqlParameter("@Prix", propositions.Prix));
             var ID_ligne_global = Convert.ToInt32((decimal)commande.ExecuteScalar());
             var ID_fournisseur = Convert.ToInt32((decimal)commande.ExecuteScalar());
-            propositions.ID_ligne_global = ID_ligne_global;
-            propositions.ID_fournisseur = ID_fournisseur;
+            commande.ExecuteNonQuery();
 
             DetruireConnexionEtCommande();
 
