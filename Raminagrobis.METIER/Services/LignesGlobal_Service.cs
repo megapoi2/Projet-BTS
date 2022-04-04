@@ -19,7 +19,7 @@ namespace Raminagrobis.METIER.Services
             var depot = new LignesGlobalDepot_DAL();
             foreach (var item in depot.GetAll())
             {
-                result.Add(new LignesGlobal_METIER(item.ID_panier, item.Quantite, item.ID_produit));
+                result.Add(new LignesGlobal_METIER(item.ID_panier, item.Quantite, item.ID_produit, item.ID_ligne_adherent));
             }
             return result;
         }
@@ -30,14 +30,14 @@ namespace Raminagrobis.METIER.Services
         {
             var depot = new LignesGlobalDepot_DAL();
             var LignesGlobal = depot.GetByID(id);
-            return new LignesGlobal_METIER(LignesGlobal.ID_panier, LignesGlobal.Quantite, LignesGlobal.ID_produit);
+            return new LignesGlobal_METIER(LignesGlobal.ID_panier, LignesGlobal.Quantite, LignesGlobal.ID_produit, LignesGlobal.ID_ligne_adherent);
         }
         #endregion
 
         #region Insert
         public LignesGlobal_DTO Insert(LignesGlobal_DTO input)
         {
-            var LignesGlobal = new LignesGlobal_DAL(input.ID_panier, input.Quantite, input.ID_produit);
+            var LignesGlobal = new LignesGlobal_DAL(input.ID_panier, input.Quantite, input.ID_produit, input.ID_ligne_adherent);
             var depot = new LignesGlobalDepot_DAL();
             depot.Insert(LignesGlobal);
             input.ID = LignesGlobal.ID;
@@ -48,7 +48,7 @@ namespace Raminagrobis.METIER.Services
         #region Update
         public void Update(int id, LignesGlobal_DTO input)
         {
-            var LignesGlobal = new LignesGlobal_DAL(input.ID_panier, input.Quantite, input.ID_produit);
+            var LignesGlobal = new LignesGlobal_DAL(input.ID_panier, input.Quantite, input.ID_produit, input.ID_ligne_adherent);
             var depot = new LignesGlobalDepot_DAL();
             depot.Update(LignesGlobal);
         }

@@ -13,15 +13,16 @@ namespace Raminagrobis.METIER.Metier
         public int ID_panier { get; set; }
         public int Quantite { get; set; }
         public int ID_produit { get; set; }
+        public int ID_ligne_adherent { get; set; }
         public int ID { get; set; }
 
 
-        public LignesGlobal_METIER(int id_panier, int quantite, int id_produit) => (ID_panier, Quantite, ID_produit) = (id_panier, quantite, id_produit);
+        public LignesGlobal_METIER(int id_panier, int quantite, int id_produit, int id_ligne_adherent) => (ID_panier, Quantite, ID_produit, ID_ligne_adherent) = (id_panier, quantite, id_produit, id_ligne_adherent);
 
         #region Insert
         public void Insert()
         {
-            LignesGlobal_DAL LignesGlobal = new LignesGlobal_DAL(ID_panier, Quantite, ID_produit);
+            LignesGlobal_DAL LignesGlobal = new LignesGlobal_DAL(ID_panier, Quantite, ID_produit, ID_ligne_adherent);
 
             var depotLignesGlobal = new LignesGlobalDepot_DAL();
 
@@ -34,7 +35,7 @@ namespace Raminagrobis.METIER.Metier
         #region Delete
         public void Delete()
         {
-            LignesGlobal_DAL LignesGlobal = new LignesGlobal_DAL(ID_panier, Quantite, ID_produit);
+            LignesGlobal_DAL LignesGlobal = new LignesGlobal_DAL(ID_panier, Quantite, ID_produit,ID_ligne_adherent);
 
             var depotLignesGlobal = new LignesGlobalDepot_DAL();
             depotLignesGlobal.Delete(LignesGlobal);
@@ -44,7 +45,7 @@ namespace Raminagrobis.METIER.Metier
         #region Update
         public void Update()
         {
-            LignesGlobal_DAL LignesGlobal = new LignesGlobal_DAL(ID_panier, Quantite, ID_produit);
+            LignesGlobal_DAL LignesGlobal = new LignesGlobal_DAL(ID_panier, Quantite, ID_produit,ID_ligne_adherent);
 
             var depotLignesGlobal = new LignesGlobalDepot_DAL();
             depotLignesGlobal.Update(LignesGlobal);

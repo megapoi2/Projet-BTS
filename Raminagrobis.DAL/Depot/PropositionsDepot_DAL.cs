@@ -105,11 +105,11 @@ namespace Raminagrobis.DAL.Depot
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "INSERT INTO Propositions (prix) VALUES (@prix); SELECT SCOPE_IDENTITY()";
+            commande.CommandText = "INSERT INTO Propositions (prix,id_ligne_global,id_fournisseur) VALUES (@Prix,@ID_ligne_global,@IF_fournisseur); SELECT SCOPE_IDENTITY()";
             commande.Parameters.Add(new SqlParameter("@Prix", propositions.Prix));
-            var ID_ligne_global = Convert.ToInt32((decimal)commande.ExecuteScalar());
-            var ID_fournisseur = Convert.ToInt32((decimal)commande.ExecuteScalar());
-            commande.ExecuteNonQuery();
+            commande.Parameters.Add(new SqlParameter("@ID_ligne_global", propositions.ID_ligne_global));
+            commande.Parameters.Add(new SqlParameter("@IF_fournisseur", propositions.ID_fournisseur));
+            commande.ExecuteNonQuery(); 
 
             DetruireConnexionEtCommande();
 

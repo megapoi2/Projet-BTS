@@ -11,6 +11,7 @@ namespace Raminagrobis.DTO.DTO
         public int ID_panier { get; set; }
         public int Quantite { get; set; }
         public int ID_produit { get; set; }
+        public int ID_ligne_adherent { get; set; }
         public int? ID { get; set; }
     }
 }
