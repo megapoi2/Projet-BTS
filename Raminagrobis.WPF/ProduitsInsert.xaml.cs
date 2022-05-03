@@ -43,16 +43,6 @@ namespace Raminagrobis.WPF
         }
         #endregion
 
-        private void ImagePanel_Drop(object sender, DragEventArgs e)
-        {
-
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                files = (string[])e.Data.GetData(DataFormats.FileDrop);
-
-            }
-        }
-
 
         #region BtnInsert
         private void BtnInsert(object sender, RoutedEventArgs e)
